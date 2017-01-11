@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="amol.emp.dept" extends="json" namespace="/base/empdept">
+		<action name="*" class="empDeptAction" method="{1}">
+			<!-- <result name="success" type="redirect">index.do</result> -->
+			<!-- <result name="input">/pages/amol/base/prosort/edit.jsp</result> -->
+			<!-- <result name="index">/pages/amol/base/prosort/index.jsp</result> -->
+			<!-- <result name="view">/pages/amol/base/prosort/edit.jsp</result> -->
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<!-- <result name="region" type="json"> -->
+			<!-- <param name="root">region</param> -->
+			<!-- </result> -->
+			<result name="tree" type="json">
+				<param name="root">empDepts</param>
+			</result>
+			<result name="iosTest" type="json">
+				<param name="root">test</param>
+			</result>
+		</action>
+	</package>
+</struts>

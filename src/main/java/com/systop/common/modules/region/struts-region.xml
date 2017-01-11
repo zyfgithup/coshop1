@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin.region" extends="json" namespace="/admin/region">
+		<action name="*" class="regionAction" method="{1}">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="remove" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="tree" type="json">
+				<param name="root">regions</param>
+			</result>
+		</action>
+	</package>
+	<package name="userapp.region" extends="json" namespace="/userapp/region">
+		<action name="*" class="phoneRegionAction" method="{1}">
+			<result name="tree" type="json">
+				<param name="root">regions</param>
+			</result>
+			<result name="success" type="json">
+				<param name="root">listRegions</param>
+			</result>
+		</action>
+	</package>
+</struts>
+

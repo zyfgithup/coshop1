@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<!-- 手机端订单Action -->
+	<package name="amol.orderPhoneAction" extends="json"  namespace="/orderPhoneAlipay">
+		<action name="*" class="orderPhoneAction" method="{1}">
+			<result type="json" name="save">	
+		   		<param name="root">resultMessage</param>
+			</result>
+			<result type="json" name="uuindex">
+				<param name="root">tempList</param>
+			</result>
+			<result type="json" name="index">
+				<param name="root">list</param>
+			</result>
+			<result type="json" name="returnOrder">	
+		   		<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+		<package name="amol.jforderPhoneAction" extends="json"  namespace="/JforderPhone">
+		<action name="*" class="jfSaleOrderPhoneAction" method="{1}">
+			<result type="json" name="save">	
+		   		<param name="root">resultMessage</param>
+			</result>
+			<result type="json" name="index">	
+		   		<param name="root">list</param>
+			</result>
+			<result type="json" name="view">
+				<param name="root">salesDetailList</param>
+			</result>
+		</action>
+	</package>
+
+
+</struts>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="amol.prosort" extends="json" namespace="/base/prosort">
+		<action name="*" class="productSortAction" method="{1}">
+			<result name="mersave" type="redirect">merTableIndex.do</result>
+			<result name="banksave" type="redirect">banksTableIndex.do</result>
+			<result name="success" type="redirect">index.do</result>
+			<result name="showKinds" type="redirect">findKinds.do</result>
+			<result name="fillKinds">/pages/amol/base/prosort/fillKinds.jsp</result>
+			<result name="input">/pages/amol/base/prosort/edit.jsp</result>
+			<result name="kindsIndex">/pages/amol/base/prosort/kindsIndex.jsp</result>
+			<result name="merInput">/pages/amol/base/prosort/meredit.jsp</result> 
+			<result name="bankEdit">/pages/amol/base/prosort/bankEdit.jsp</result> 
+			<result name="index">/pages/amol/base/prosort/index.jsp</result>
+			<result name="merIndex">/pages/amol/base/prosort/merchantIndex.jsp</result> 
+			<result name="merTableIndex">/pages/amol/base/prosort/merTableIndex.jsp</result>
+			<result name="banksTableIndex">/pages/amol/base/prosort/banksTableIndex.jsp</result>
+			<!-- <result name="view">/pages/amol/base/prosort/edit.jsp</result> -->
+			<result name="complete" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="newTree" type="json">
+				<param name="root">list</param>
+			</result>
+			<!-- <result name="region" type="json"> -->
+			<!-- <param name="root">region</param> -->
+			<!-- </result> -->
+			<result name="tree" type="json">
+				<param name="root">productSorts</param>
+			</result>
+		</action>
+	</package>
+	<package name="phone.productSort" extends="json" namespace="/phone/productSort">
+		<action name="*" class="phoneProSortAction" method="{1}">
+			<result name="index" type="json">
+				<param name="root">list</param>
+			</result>
+			<result name="userList" type="json">
+				<param name="root">userList</param>
+			</result>
+		</action>
+	</package>
+</struts>

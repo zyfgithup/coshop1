@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+  <struts>
+    <package name="amol.agent" extends="json" namespace="/user/agent">
+	  <action name="*" class="agentAction" method="{1}">
+	    <result name="success" type="redirect">index.do</result>
+		  <result name="toInforList" type="redirect">toInforList.do</result>
+	    <result name="delSuc" type="redirect">indexCun.do</result>
+		  <result name="deleteVip" type="redirect">getVipInfos.do</result>
+		  <result name="vipIndex">/pages/amol/user/agent/vipIndex.jsp</result>
+		  <result name="editVip">/pages/amol/user/agent/editVip.jsp</result>
+
+		  <result name="editxx">/pages/amol/user/agent/editxx.jsp</result>
+
+		<result name="input">/pages/amol/user/agent/edit.jsp</result>
+		  <result name="qbIndex">/pages/amol/user/agent/qbIndex.jsp</result>
+		<result name="index">/pages/amol/user/agent/index.jsp</result>
+		<result name="validateInfo">/pages/amol/user/agent/validateInfo.jsp</result>
+		<result name="showIndex">/pages/amol/user/agent/showIndex.jsp</result>
+		<result name="showEndIndex">/pages/amol/user/agent/showEndIndex.jsp</result>
+		<result name="restPassword">/pages/amol/user/agent/restPassword.jsp</result>
+
+		  <result name="toInforListPage">/pages/amol/user/agent/toInforListPage.jsp</result>
+
+
+		<result type="json" name="MerIndex">
+		   		<param name="root">list</param>
+		</result>
+	  </action>
+	  
+	  <action name="restPass" class="agentAction" method="edit">
+		<result name="input">/pages/amol/user/agent/restPassword.jsp</result>
+	  </action>
+	  
+	  <action name="restPassword" class="agentAction" method="restPassword">
+		<result name="restPassword" type="redirect">index.do</result>
+	  </action>
+
+	</package>
+	<package name="amol.fxgz" extends="json" namespace="/merchant/fxgz">
+		<action name="*" class="fxgzAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/user/agent/fxgzIndex.jsp</result>
+			<result name="input">/pages/amol/user/agent/fxgzEdit.jsp</result>
+			<result name="restPassword" type="redirect">index.do</result>
+			<result name="jfapp">/pages/amol/user/app/jf_modify.jsp</result>
+			<result name="appEdit">/pages/amol/user/app/appEdit.jsp</result>
+			<result name="showReceiveAddress">/pages/amol/user/app/showReceiveAddressappEdit.jsp</result>
+			<result name="partnerLink">/pages/amol/user/app/partnerLink.jsp</result>
+		</action>
+	</package>
+	<package name="amol.rezheng" extends="json" namespace="/merchant/rezheng">
+		<action name="*" class="renZhengAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/user/renzheng/index.jsp</result>
+			<result name="rzPage">/pages/amol/user/renzheng/rzPage.jsp</result>
+		</action>
+	</package>
+	<!-- app用户管理 -->
+	<package name="amol.appusermanager" extends="json" namespace="/appuser/manager">
+		<action name="*" class="appUserAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="jycSuc" type="redirect">/salesOrder/indexJyXx.do</result>
+			<result name="index">/pages/amol/user/app/index.jsp</result>
+			<result name="input">/pages/amol/user/app/restPassword.jsp</result>
+			<result name="restPassword" type="redirect">index.do</result>
+			<result name="jfapp">/pages/amol/user/app/jf_modify.jsp</result>
+			<result name="appEdit">/pages/amol/user/app/appEdit.jsp</result>
+			<result name="showReceiveAddress">/pages/amol/user/app/showReceiveAddressappEdit.jsp</result>
+			<result name="partnerLink">/pages/amol/user/app/partnerLink.jsp</result>
+			<result name="turnUnderUsers">/pages/amol/user/app/turnUnderUsers.jsp</result>
+			<result name="getCheckUsers">/pages/amol/user/app/showIndex.jsp</result>
+			<result name="getCheckJyc">/pages/amol/user/app/showJycIndex.jsp</result>
+			<result type="json" name="jsonRst">	
+		   		<param name="root">checkResult</param>
+			</result>
+			<result type="json" name="userJst">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<action name="restPass" class="appUserAction" method="edit">
+			<result name="jfapp">/pages/amol/user/app/restPassword.jsp</result>
+	    </action>
+	    <action name="restPassword" class="appUserAction" method="restPassword">
+			<result name="restPassword" type="redirect">index.do</result>
+	  	</action>
+	</package>
+	<!-- app用户登录 -->
+	<package name="android.applogin" extends="json" namespace="/appuser/login">
+		<action name="*" class="phoneLoginAction" method="{1}">
+			<result type="json" name="success">	
+		   		<param name="root">user</param>
+			</result>
+				<result type="json" name="input">	
+		   		<param name="root">msg</param>
+			</result>
+			<result type="json" name="result">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<package name="web.jiayouset" extends="json" namespace="/jiayouset">
+		<action name="*" class="jiayouSetAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/user/jiayouset/index.jsp</result>
+			<result name="input">/pages/amol/user/jiayouset/edit.jsp</result>
+			<result type="json" name="list">
+				<param name="root">list</param>
+			</result>
+		</action>
+	</package>
+	<!-- app用户登录 -->
+	<package name="android.tbr" extends="json" namespace="/appuser/tbr">
+		<action name="*" class="phoneTbrAction" method="{1}">
+			<result type="json" name="result">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="touBaoRens">
+				<param name="root">touBaoRens</param>
+			</result>
+			<result type="json" name="touBaoRen">
+				<param name="root">touBaoRen</param>
+			</result>
+		</action>
+	</package>
+	<package name="cheliang" extends="json" namespace="/appuser/cheliang">
+		<action name="*" class="phoneCheLiangAction" method="{1}">
+			<result type="json" name="map">
+				<param name="root">map</param>
+			</result>
+			<result type="json" name="clList">
+				<param name="root">clList</param>
+			</result>
+			<result type="json" name="cl">
+				<param name="root">cl</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="caculateCCTimes" extends="json" namespace="/caculateCCTimes">
+		<action name="*" class="phoneCaculateCCTimesAction" method="{1}">
+			<result type="json" name="result">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+
+
+
+	<package name="zhaopin" extends="json" namespace="/appuser/zhaopin">
+		<action name="*" class="phoneZhaoPinAction" method="{1}">
+			<result type="json" name="map">
+				<param name="root">map</param>
+			</result>
+			<result type="json" name="clList">
+				<param name="root">clList</param>
+			</result>
+			<result type="json" name="zp">
+				<param name="root">zp</param>
+			</result>
+		</action>
+	</package>
+	<package name="android.phoneMerchat" extends="json" namespace="/appuser/phoneMerchat">
+		<action name="*" class="phoneAgentAction" method="{1}">
+			<result type="json" name="success">	
+		   		<param name="root">list</param>
+			</result>
+			<result type="json" name="mb">
+				<param name="root">mb</param>
+			</result>
+			<result type="json" name="yhShenqing">
+				<param name="root">yhShenqing</param>
+			</result>
+			<result type="json" name="sqList">
+				<param name="root">sqList</param>
+			</result>
+			<result type="json" name="renZheng">
+				<param name="root">renZheng</param>
+			</result>
+			<result type="json" name="rzcg">
+				<param name="root">rzfhList</param>
+			</result>
+			<result type="json" name="rzsb">
+				<param name="root">rzfhList</param>
+			</result>
+			<result type="json" name="detailSuc">	
+		   		<param name="root">user</param>
+			</result>
+			<result type="json" name="nearList">	
+		   		<param name="root">userList</param>
+			</result>
+			<result type="json" name="addSuc">	
+		   		<param name="root">result</param>
+			</result>
+			<result type="json" name="reMsg">
+				<param name="root">reMap</param>
+			</result>
+		</action>
+	</package>
+	<!-- app用户注册 -->
+	<package name="android.appregister" extends="json" namespace="/appuser/register">
+		<action name="*" class="phoneRegisterAction" method="{1}">
+			<result type="json" name="success">	
+		   		<param name="root">user</param>
+			</result>
+			<result type="json" name="input">
+		   		<param name="root">msg</param>
+			</result>
+		</action>
+	</package>
+	<package name="android.cheliang" extends="json" namespace="/cheliang">
+		<action name="*" class="cheLiangAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/user/cheliang/index.jsp</result>
+			<result name="lookFiles">/pages/amol/user/cheliang/edit.jsp</result>
+			<result name="input">/pages/amol/user/app/restPassword.jsp</result>
+			<result name="restPassword" type="redirect">index.do</result>
+			<result type="json" name="input">
+				<param name="root">msg</param>
+			</result>
+		</action>
+	</package>
+	<package name="android.fanKui" extends="json" namespace="/fanKui">
+		<action name="*" class="fanKuiToAppAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/user/fankui/index.jsp</result>
+			<result name="restPassword" type="redirect">index.do</result>
+			<result type="json" name="input">
+				<param name="root">msg</param>
+			</result>
+		</action>
+	</package>
+	<package name="android.distanceset" extends="json" namespace="/distanceset">
+		<action name="*" class="distanceAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/user/distance/index.jsp</result>
+			<result name="input">/pages/amol/user/distance/edit.jsp</result>
+		</action>
+	</package>
+	<package name="android.zhaopin" extends="json" namespace="/web/zhaopin">
+		<action name="*" class="zhaoPinAciton" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/user/zhaopin/index.jsp</result>
+			<result name="lookFiles">/pages/amol/user/zhaopin/edit.jsp</result>
+			<result name="restPassword" type="redirect">index.do</result>
+			<result type="json" name="input">
+				<param name="root">msg</param>
+			</result>
+		</action>
+	</package>
+	<!-- app用户action -->
+	<package name="android.appuser" extends="json" namespace="/appuser/user">
+		<action name="*" class="phoneUserAction" method="{1}">
+			<result type="json" name="validate_phone">
+		   		<param name="root">validatePhoneMessage</param>
+			</result>
+			<result type="json" name="newList">
+				<param name="root">newList</param>
+			</result>
+			<result type="json" name="update_password">
+				<param name="root">validatePhoneMessage</param>
+			</result>
+			<result type="json" name="user">
+				<param name="root">user</param>
+			</result>
+			<result type="json" name="validateCode">
+				<param name="root">validatePhoneMessage</param>
+			</result>
+			<result type="json" name="gainValidateCode">
+				<param name="root">validatePhoneMessage</param>
+			</result>
+			
+			<result type="json" name="update">
+				<param name="root">validatePhoneMessage</param>
+			</result>
+			<result type="json" name="userIntegral">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="partnerLink">
+				<param name="root">list</param>
+			</result>
+		</action>
+	</package>
+	<package name="android.appaddress" extends="json" namespace="/appuser/receiveaddress">
+		<action name="*" class="phoneAddressAction" method="{1}">
+			<result type="json" name="success">	
+		   		<param name="root">message</param>
+			</result>
+			<result type="json" name="index">	
+		   		<param name="root">list</param>
+			</result>
+			<result type="json" name="getDetail">
+		   		<param name="root">receiveAddress</param>
+			</result>
+		</action>
+	</package>
+  </struts>

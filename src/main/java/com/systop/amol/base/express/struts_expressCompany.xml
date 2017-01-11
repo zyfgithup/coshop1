@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="coshop.expressCompany" extends="default"  namespace="/base/expressCompany">
+		<action name="*" class="expressCompanyAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/base/express_company/edit.jsp</result> 
+			<result name="index">/pages/amol/base/express_company/index.jsp</result> 
+			<result name="view">/pages/amol/base/express_company/edit.jsp</result>				
+		</action>
+	</package>
+	<package name="phone.company" extends="json" namespace="/phone/company">
+		<action name="*" class="phoneExpressAction" method="{1}">
+			<result name="index" type="json">
+				<param name="root">list</param>
+			</result>
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">expressCompany</param>
+			</result>
+		</action>
+	</package>
+</struts>

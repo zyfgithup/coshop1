@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="amol.purchase" extends="json" namespace="/purchase">
+		<action name="*" class="purchaseAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/purchase/edit.jsp</result>
+			<result name="index">/pages/amol/purchase/index.jsp</result>
+			<result name="find">/pages/amol/purchase/find_purchase.jsp</result>
+			<result name="view">/pages/amol/purchase/view.jsp</result>
+			<result name="exportExcel">/pages/amol/purchase/exportExcel.jsp</result>
+			<result type="json" name="jsonResult">
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">jsonResult</param>
+			</result>
+			<result type="json" name="jsonResultSales">
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">jsonResultSales</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="amol.returns" extends="default" namespace="/purchase/returns">
+		<action name="*" class="returnsAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/purchase/returns/edit.jsp</result>
+			<result name="index">/pages/amol/purchase/returns/index.jsp</result>
+			<result name="view">/pages/amol/purchase/returns/view.jsp</result>
+			<result name="exportExcel">/pages/amol/purchase/returns/exportExcel.jsp
+			</result>
+		</action>
+	</package>
+
+	<package name="amol.purchasedetail" extends="default"
+		namespace="/purchase/purchasedetail">
+		<action name="*" class="purchaseDetailAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/purchase/purchasedetail/indexDetail.jsp
+			</result>
+		</action>
+	</package>
+
+	<package name="amol.paydetail" extends="default" namespace="/purchase/paydetail">
+		<action name="*" class="payDetailAction" method="{1}">
+			<result name="index">/pages/amol/purchase/purchasedetail/payDetail.jsp
+			</result>
+		</action>
+	</package>
+	<package name="amol.orderdetail" extends="default"
+		namespace="/purchase/orderdetail">
+		<action name="*" class="orderDetailAction" method="{1}">
+			<result name="index">/pages/amol/purchase/purchasedetail/orderDetail.jsp
+			</result>
+		</action>
+	</package>
+	<package name="amol.returnsdetail" extends="default"
+		namespace="/purchase/returnsdetail">
+		<action name="*" class="returnsDetailAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/purchase/purchasedetail/returnsindexDetail.jsp
+			</result>
+
+		</action>
+	</package>
+
+	<package name="amol.payAble" extends="default" namespace="/purchase/payable">
+		<action name="*" class="payAbleAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/purchase/payable/index.jsp</result>
+
+		</action>
+	</package>
+
+	<package name="amol.pay" extends="default" namespace="/purchase/pay">
+		<action name="*" class="payAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="view">/pages/amol/purchase/pay/view.jsp</result>
+			<result name="input">/pages/amol/purchase/pay/edit.jsp</result>
+			<result name="index">/pages/amol/purchase/pay/index.jsp</result>
+			<result name="exportExcel">/pages/amol/purchase/pay/exportExcel.jsp</result>
+		</action>
+	</package>
+
+	<package name="amol.order" extends="default" namespace="/purchase/order">
+		<action name="*" class="orderAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/purchase/order/edit.jsp</result>
+			<result name="index">/pages/amol/purchase/order/index.jsp</result>
+			<result name="view">/pages/amol/purchase/order/view.jsp</result>
+			<result name="find">/pages/amol/purchase/find_order.jsp</result>
+			<result name="exportExcel">/pages/amol/purchase/order/exportExcel.jsp
+			</result>
+		</action>
+	</package>
+
+	<package name="amol.selectAll" extends="default" namespace="/purchase/selectAll">
+		<action name="*" class="selectAction" method="{1}">
+			<result name="suplierindex">/pages/amol/purchase/selectAll/suplierselectAll.jsp
+			</result>
+			<result name="index">/pages/amol/purchase/selectAll/selectAll.jsp
+			</result>
+		</action>
+	</package>
+	<package name="amol.selectDetail" extends="default"
+		namespace="/purchase/selectDetail">
+		<action name="*" class="selectDetailAction" method="{1}">
+			<result name="suplierindexDetail">/pages/amol/purchase/selectAll/suplierselectDetail.jsp
+			</result>
+			<result name="indexDetail">/pages/amol/purchase/selectAll/selectDetail.jsp
+			</result>
+		</action>
+	</package>
+	<package name="amol.purchasetotal" extends="json"
+		namespace="/purchase/purchasetotal">
+		<action name="*" class="purchaseTotalAction" method="{1}">
+			<result name="index">/pages/amol/purchase/selectAll/purchasetotal.jsp
+			</result>
+			<result type="json" name="jsonRst">	
+		   		<param name="root">cardsRst</param>
+			</result>
+		</action>
+	</package>
+	<package name="amol.paytotal" extends="default"
+		namespace="/purchase/paytotal">
+		<action name="*" class="payTotalAction" method="{1}">
+			<result name="index">/pages/amol/purchase/selectAll/paytotal.jsp
+			</result>
+		</action>
+	</package>
+	<package name="amol.payInit" extends="json" namespace="/purchase/payinit">
+		<action name="*" class="payInitAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="init" type="redirect">/purchase/payinit/init.do</result>
+			<result name="input">/pages/amol/purchase/payinit/edit.jsp</result>
+			<result name="index">/pages/amol/purchase/payinit/index.jsp</result>
+			<result name="jsonSuccess" type="json">
+				<param name="root">result</param>
+			</result>	
+		</action>
+	    <action name="importData" class="payInitImportAction" method="importData">
+			<result name="success" type="redirect">/purchase/payinit/init.do</result>
+			<result name="input">/pages/amol/purchase/payinit/edit.jsp</result>
+		</action>			
+	</package>
+	
+	
+	
+	
+</struts>

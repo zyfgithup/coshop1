@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 商户提现 -->
+	<package name="bnsc.merchantTiXian" extends="json" namespace="/merchantTiXian">
+		<action name="*" class="tiXianRecordAction" method="{1}">
+			<result name="index">/pages/amol/finance/merchant_ti_xian/index.jsp</result>
+			<result name="view">/pages/amol/finance/merchant_ti_xian/view.jsp</result>
+			<result name="input">/pages/amol/finance/merchant_ti_xian/edit.jsp</result>
+			<result name="success" type="redirectAction">index.do</result>
+		</action>
+	</package>
+	
+	<!-- 提现平台管理 -->
+	<package name="bnsc.tiXianManager" extends="json" namespace="/tiXianManager">
+		<action name="*" class="tiXianRecordManagerAction" method="{1}">
+			<result name="index">/pages/amol/finance/merchant_ti_xian/index_manager.jsp</result>
+			<result name="view">/pages/amol/finance/merchant_ti_xian/view.jsp</result>
+			<result name="huiKuanUI">/pages/amol/finance/merchant_ti_xian/huiKuanUI.jsp</result>
+			<result name="huiKuan" type="redirectAction">index.do</result>
+		</action>
+	</package>
+	<package name="amol.finance.costSort" extends="json" namespace="/finance/costSort">
+		<action name="*" class="costSortAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/finance/costsort/index.jsp</result>
+			<result name="input">/pages/amol/finance/costsort/edit.jsp</result>
+			<result name="complete" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="tree" type="json">
+				<param name="root">costSorts</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="amol.finance.cost" extends="json"  namespace="/finance/cost">
+		<action name="*" class="costAction" method="{1}">
+			<result name="success" type="redirect">index.do?status=${status}</result>
+			<result name="input">/pages/amol/finance/cost/edit.jsp</result> 
+			<result name="index">/pages/amol/finance/cost/index.jsp</result>
+			<result name="view">/pages/amol/finance/cost/view.jsp</result>
+			<result name="exportExcel">/pages/amol/finance/cost/exportExcel.jsp
+			</result>
+			<result type="json" name="jsonResult">
+			    <param name="ignoreHierarchy">false</param>
+		   		<param name="root">jsonResult</param>
+			</result>			
+		</action>
+	</package>
+		
+	<package name="amol.finance.costDetail" extends="default"  namespace="/finance/costDetail">
+		<action name="*" class="costDetailAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/finance/costdetail/index.jsp</result> 							
+		</action>
+	</package>
+
+	<package name="amol.finance.fundsSort" extends="default"  namespace="/finance/fundsSort">
+		<action name="*" class="fundsSortAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/finance/fundsort/edit.jsp</result> 
+			<result name="index">/pages/amol/finance/fundsort/index.jsp</result>		
+		</action>
+	</package>
+		<package name="amol.finance.apptx" extends="json" namespace="/finance/appTxGl">
+		<action name="*" class="phoneTxRecordAction" method="{1}">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="tree" type="json">
+				<param name="root">costSorts</param>
+			</result>
+			<result name="index" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+	</package>
+</struts>

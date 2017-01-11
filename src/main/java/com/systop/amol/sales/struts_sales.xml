@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <!-- 销售订单 -->
+    <!-- 销售订单 -->
+	<package name="amol.salesOrder" extends="default"  namespace="/salesOrder">
+		<action name="*" class="salesOrderAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="jyxxSuc" type="redirect">indexJyXx.do</result>
+			<result name="sure" type="redirect">index.do?pment=CASH</result>
+			<result name="cashSuc" type="redirect">index.do?pment=CASH</result>
+			<result name="tgSuc" type="redirect">tgIndex.do</result>
+			<result name="input">/pages/amol/sales/order/edit.jsp</result>
+			<result name="seeFp">/pages/amol/sales/order/seeFp.jsp</result>
+			<result name="tgIndex">/pages/amol/sales/order/tgIndex.jsp</result> 
+			<result name="index">/pages/amol/sales/order/index.jsp</result>
+			<result name="indextj">/pages/amol/sales/order/indextj.jsp</result>
+			<result name="ptIndex">/pages/amol/sales/order/pt_index.jsp</result>
+			<result name="indexOnlineBanking">/pages/amol/sales/order/online_banking/index.jsp</result>
+			<result name="view">/pages/amol/sales/order/view.jsp</result>
+
+			<result name="viewWx">/pages/amol/sales/order/viewWx.jsp</result>
+
+
+			<result name="viewBx">/pages/amol/sales/order/viewBx.jsp</result>
+
+
+			<result name="selectExpressCompany">/pages/amol/sales/order/selectExpressCompany.jsp</result>
+			<result name="jfOrderView">/pages/amol/sales/order/jfOrderView.jsp</result>
+			<result name="selectOrderUI">/pages/amol/sales/order/showIndex.jsp</result>
+			<result name="exportExcel">/pages/amol/sales/order/exportExcel.jsp</result>
+			<result name="sumIndex">/pages/amol/sales/order/sumIndex.jsp</result>
+			<result name="groupIndex">/pages/amol/sales/order/groupIndex.jsp</result>
+			
+			<result name="jfSale">/pages/amol/sales/order/jfSale.jsp</result>
+			<result name="qyJfSaleList" type="redirect">qyJfSaleList.do</result>
+			
+			<result name="ptJfSale">index.do?pment=WXPAY</result>
+			
+			<result name="test" type="redirect">test.do?testNumber=${testNumber }</result>
+			<result name="indexJyXx">/pages/amol/sales/order/indexJyXx.jsp</result>
+			<result name="turnOrderJyc">/pages/amol/sales/order/turnOrderJyc.jsp</result>
+		</action>
+	</package>
+	<!-- Card  销售订单 -->
+	<package name="amol.cardSalesOrderAction" extends="default"  namespace="/salesOrder/cardSalesOrder">
+		<action name="*" class="cardSalesOrderAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/sales/order/cardOrder/edit.jsp</result> 
+			<result name="index">/pages/amol/sales/order/cardOrder/index.jsp</result>
+			<result name="view">/pages/amol/sales/order/cardOrder/view.jsp</result>
+			<result name="selectOrderUI">/pages/amol/sales/order/cardOrder/showIndex.jsp</result>
+			<result name="exportExcel">/pages/amol/sales/order/cardOrder/exportExcel.jsp</result>
+		</action>
+	</package>
+	<!-- 手机端订单Action -->
+	<package name="amol.salesOrderPhoneAction" extends="json"  namespace="/salesOrderPhone">
+		<action name="*" class="salesOrderPhoneAction" method="{1}">
+			<result type="json" name="save">	
+		   		<param name="root">resultMessage</param>
+			</result>
+			<result type="json" name="index">
+				<param name="root">list</param>
+			</result>
+			<result type="json" name="userList">
+				<param name="root">userList</param>
+			</result>
+			<result type="json" name="order">
+				<param name="root">order</param>
+			</result>
+			<result type="json" name="uuindex">
+				<param name="root">uList</param>
+			</result>
+			<result type="json" name="view">
+				<param name="root">salesDetailList</param>
+			</result>
+			
+			<result type="json" name="appUserConfirmReceipt">
+				<param name="root">resultMessage</param>
+			</result>
+			
+			<result type="json" name="cashPay">
+				<param name="root">resultMessage</param>
+			</result>
+			
+			<result type="json" name="sendPaySMS">
+				<param name="root">resultMessage</param>
+			</result>
+			
+			
+			<!-- 退货 -->
+			<result type="json" name="returnOrder">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="returnOrderIndex">
+				<param name="root">list</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 手机端退货单Action -->
+	<package name="amol.salesReturnsPhoneAction" extends="json"  namespace="/salesReturnsPhone">
+		<action name="*" class="salesReturnsPhoneAction" method="{1}">
+			<result type="json" name="save">	
+		   		<param name="root">result</param>
+			</result>
+			<result type="json" name="index">
+				<param name="root">list</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 单子明细商品记录 -->
+	<package name="amol.salesDetail" extends="default"  namespace="/salesDetail">
+		<action name="*" class="salesDetailAction" method="{1}">
+			<result name="view">/pages/amol/sales/salesDetail/view_detail.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 销售出库 -->
+	<package name="amol.sales" extends="default"  namespace="/sales">
+		<action name="*" class="salesAction" method="{1}">
+			<result name="isPrint">/pages/amol/sales/sales/isPrint.jsp</result>
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/sales/sales/edit.jsp</result> 
+			<result name="index">/pages/amol/sales/sales/index.jsp</result> 
+			<result name="queryCashIndex">/pages/amol/sales/sales/queryCashIndex.jsp</result>
+			<result name="view">/pages/amol/sales/sales/view.jsp</result>
+			<result name="orderToStUI">/pages/amol/sales/sales/orderToStUI.jsp</result>
+			<result name="selectOutKUI">/pages/amol/sales/sales/showIndex.jsp</result>
+			<result name="exportExcel">/pages/amol/sales/sales/exportExcel.jsp</result>
+			<result name="receiveAble">/pages/amol/sales/sales/receiveAble.jsp</result>
+			<result name="receiveAbleCard">/pages/amol/sales/sales/receiveAbleCard.jsp</result>
+			<result name="print">/pages/amol/sales/sales/print.jsp</result>
+			<result name="showIndex">/pages/amol/sales/sales/cashShowIndex.jsp</result>
+		</action>
+	</package>
+	<!-- Card  销售出库 -->
+	<package name="amol.cardSales" extends="default"  namespace="/sales/cardSales">
+		<action name="*" class="cardSalesAction" method="{1}">
+			<result name="isPrint">/pages/amol/sales/sales/cardSales/isPrint.jsp</result>
+			<result name="cardSuccess" type="redirect">cardIndex.do</result>
+			<result name="cardIndex">/pages/amol/sales/sales/cardSales/cardIndex.jsp</result>
+			<result name="view">/pages/amol/sales/sales/cardSales/view.jsp</result>
+			<result name="queryCardIndex">/pages/amol/sales/sales/cardSales/queryCardIndex.jsp</result>
+			<result name="cardOrderToStUI">/pages/amol/sales/sales/cardSales/cardOrderToStUI.jsp</result>
+			<result name="exportExcel">/pages/amol/sales/sales/cardSales/exportExcel.jsp</result>
+			<result name="editCard">/pages/amol/sales/sales/cardSales/editCard.jsp</result>
+			<result name="queryBankIndex">/pages/amol/sales/sales/cardSales/bankIndex.jsp</result>
+			<result name="print">/pages/amol/sales/sales/cardSales/print.jsp</result>
+			<result name="showIndex">/pages/amol/sales/sales/cardSales/showIndex.jsp</result>
+		</action>
+	</package>
+	<!-- 销售退货 -->
+	<package name="amol.salesReturns" extends="default"  namespace="/salesReturns">
+		<action name="*" class="salesReturnsAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="cardSuccess" type="redirect">cardIndex.do</result>
+			<result name="groupCardSuccess" type="redirect">groupCardIndex.do?salesType=g</result>
+			<result name="index">/pages/amol/sales/returns/index.jsp</result>
+			
+			<!-- 商户查看 -->
+			<result name="cardIndex">/pages/amol/sales/returns/cardIndex.jsp</result>
+			<!-- 平台 -->
+			<result name="return_salse_manager_index">/pages/amol/sales/returns/returnSalseManagerIndex.jsp</result>
+			
+			<result name="groupCardIndex">/pages/amol/sales/returns/groupCardIndex.jsp</result>
+			<result name="view">/pages/amol/sales/returns/view.jsp</result>
+			<result name="viewCash">/pages/amol/sales/returns/viewCash.jsp</result>
+			<result name="exportExcel">/pages/amol/sales/returns/exportExcel.jsp</result>
+			<result name="exportExcelCash">/pages/amol/sales/returns/exportExcelCash.jsp</result>
+			<result name="isPrint">/pages/amol/sales/returns/isPrint.jsp</result>
+			<result name="isCashPrint">/pages/amol/sales/returns/isCashPrint.jsp</result>
+			<result name="cashPrint">/pages/amol/sales/returns/cashPrint.jsp</result>
+			<result name="isPrint">/pages/amol/sales/returns/isPrint.jsp</result>
+			<result name="print">/pages/amol/sales/returns/print.jsp</result>
+			<result name="input">/pages/amol/sales/returns/card_ckd_to_re.jsp</result>
+			<result name="inputCash">/pages/amol/sales/returns/ckd_to_re.jsp</result>
+			<result name="stTosRUI">/pages/amol/sales/returns/card_ckd_to_re.jsp</result> 
+			<result name="stTosRUICash">/pages/amol/sales/returns/ckd_to_re.jsp</result>
+			<result name="cashReturnUI">/pages/amol/sales/returns/cashReturnUI.jsp</result>
+			<result name="cardReturnUI">/pages/amol/sales/returns/cardReturnUI.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 销售回款款单 -->
+	<package name="amol.receive" extends="default"  namespace="/receive">
+		<action name="*" class="receiveAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="cardSuccess" type="redirect">cardIndex.do</result>
+			<result name="index">/pages/amol/sales/receive/index.jsp</result>
+			<result name="cardIndex">/pages/amol/sales/receive/cardIndex.jsp</result>
+			<result name="viewCash">/pages/amol/sales/receive/viewCash.jsp</result>
+			<result name="view">/pages/amol/sales/receive/view.jsp</result>
+			<result name="cardSalesReceive">/pages/amol/sales/receive/cardSalesReceive.jsp</result>
+			<result name="salesReceive">/pages/amol/sales/receive/salesReceive.jsp</result>
+			<result name="input">/pages/amol/sales/receive/salesReceive.jsp</result>
+			<result name="exportExcel">/pages/amol/sales/receive/exportExcel.jsp</result>
+			<result name="exportExcelCash">/pages/amol/sales/receive/exportExcelCash.jsp</result>
+			<result name="cashRS">/pages/amol/sales/receiveDetail/index.jsp</result>
+			<result name="cardRS">/pages/amol/sales/receiveDetail/cardIndex.jsp</result>
+			<!-- 由期初应收款产生的回款单明细 -->
+			<result name="beginning">/pages/amol/sales/receiveDetail/receiveInit.jsp</result>
+			<!-- 回款汇总 -->
+			<result name="querySummary">/pages/amol/sales/receive/summary.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 销售回款单的回款详情明细 -->
+	<package name="amol.receiveDetail" extends="default"  namespace="/receiveDetail">
+		<action name="*" class="receiveDetailAction" method="{1}">
+			<result name="index" type="redirect">/receiveDetail/index.do</result>
+			<result name="cardIndex" type="redirect">/receiveDetail/cardIndex.do</result>
+			<result name="cashRS">/pages/amol/sales/receiveDetail/index.jsp</result>
+			<result name="cardRS">/pages/amol/sales/receiveDetail/cardIndex.jsp</result>
+			<!-- 由期初应收款产生的回款单明细 -->
+			<result name="beginning">/pages/amol/sales/receiveDetail/receiveInit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 条形码 -->
+	<package name="amol.barcode" extends="default"  namespace="/barcode">
+		<action name="*" class="barcodeAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/sales/barcode/index.jsp</result> 
+			<result name="view">/pages/amol/sales/barcode/view.jsp</result>
+			<result name="indexADealer">/pages/amol/sales/barcode/indexADealer.jsp</result>
+		</action>
+	</package>
+	<!-- 销售查询 -->
+	<package name="amol.salesEnquiries" extends="default"  namespace="/salesEnquiries">
+		<action name="*" class="salesEnquiriesAction" method="{1}">
+			<result name="index">/pages/amol/sales/unifiedSearch/index.jsp</result>
+			<result name="order">/pages/amol/sales/unifiedSearch/order.jsp</result>
+			<result name="sales">/pages/amol/sales/unifiedSearch/sales.jsp</result>
+			<result name="returns">/pages/amol/sales/unifiedSearch/returns.jsp</result>
+			<!-- <result name="cardIndex">/pages/amol/sales/unifiedSearch/cardIndex.jsp</result> -->
+			<result name="cardOrder">/pages/amol/sales/unifiedSearch/cardOrder.jsp</result>
+			<result name="cardSales">/pages/amol/sales/unifiedSearch/cardSales.jsp</result>
+			<result name="cardReturns">/pages/amol/sales/unifiedSearch/cardReturns.jsp</result>
+			<result name="groupCardOrder">/pages/amol/sales/unifiedSearch/groupCardOrder.jsp</result>
+			<result name="groupCardReturns">/pages/amol/sales/unifiedSearch/groupCardReturns.jsp</result>
+			<result name="groupCardIndex">/pages/amol/sales/unifiedSearch/groupCardIndex.jsp</result>
+		</action>
+	</package>
+	<!-- 汇总 -->
+	<package name="amol.salesSummaryAction" extends="default"  namespace="/salesSummary">
+		
+		<action name="*" class="salesSummaryAction" method="{1}">
+			<!-- 佣金分配统计 -->
+			<result name="index">/pages/amol/sales/salesSummary/index.jsp</result>
+			<!--销售汇总  -->
+			<result name="myindex">/pages/amol/sales/salesSummary/myindex.jsp</result>
+			<!-- 分销商销售汇总 -->
+			<result name="indexDistributor">/pages/amol/sales/salesSummary/indexDistributor.jsp</result>
+			<!-- 详情 -->
+			<result name="view">/pages/amol/sales/salesSummary/view.jsp</result>
+		</action>
+	</package>
+	<!-- 应收初始化 -->
+	<package name="amol.receiveInit" extends="json"  namespace="/receiveInit">
+		<action name="*" class="receiveInitAction" method="{1}">
+			<result name="success" type="redirect">/receiveInit/init.do</result>
+			<result name="index">/pages/amol/sales/receiveInit/index.jsp</result>
+			<result name="input">/pages/amol/sales/receiveInit/edit.jsp</result>
+			<result type="json" name="delete">	
+		   		<param name="root">rel</param>
+			</result>
+		</action>
+		<action name="importData" class="receiveInitImportAction" method="importData">
+			<result name="success" type="redirect">/receiveInit/init.do</result>
+			<result name="input">/pages/amol/sales/receiveInit/edit.jsp</result>
+		</action>
+	</package>
+</struts>

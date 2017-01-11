@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <!-- 推送管理 -->
+	<package name="yhkj.pushMessage" extends="json" namespace="/pushMessage">
+		<action name="*" class="pushMessageAction" method="{1}">
+			<result type="json" name="jsonRst">	
+		   		<param name="root">pushMessage</param>
+			</result>
+			<result type="json" name="jsonList">	
+		   		<param name="root">page</param>
+			</result>
+			<result type="json" name="indexImage">	
+		   		<param name="root">page</param>
+			</result>
+			<result type="json" name="saveKeyValue">	
+		   		<param name="root">keyValueStatus</param>
+			</result>
+			<result name="pushUI">/pages/htw/edit.jsp</result>
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/htw/index.jsp</result>
+			<result name="view">/pages/htw/view.jsp</result>
+			<result name="input">/pages/htw/edit.jsp</result>
+		</action>
+	</package>
+	<!-- 推送管理手机端Action -->
+	<package name="yhkj.pushMessagePhone" extends="json" namespace="/pushMessagePhone">
+		<action name="*" class="pushMessagePhoneAction" method="{1}">
+			<result type="json" name="jsonList">	
+		   		<param name="root">pushMessageList</param>
+			</result>
+			<result type="json" name="advJson">
+				<param name="root">aPosList</param>
+			</result>
+		</action>
+	</package>
+	<!-- 首页图片管理 -->
+	<package name="yhkj.indexImage" extends="json" namespace="/indexImage">
+		<action name="*" class="indexImageAction" method="{1}">
+			<result name="index">/pages/htw/indexImage/indexImageManager.jsp</result>
+			<result name="indexAdv">/pages/htw/indexImage/indexAdvImageManager.jsp</result>
+			<result name="editAdv">/pages/htw/indexImage/editAdv.jsp</result>
+			<result name="input">/pages/htw/indexImage/edit.jsp</result>
+			<result name="successAdv" type="redirect">indexAdv.do</result>
+			<result name="success" type="redirect">/user/agent/index.do</result>
+			<result name="view">/pages/htw/indexImage/view.jsp</result>
+		</action>
+	</package>
+	<package name="yhkj.advpostion" extends="json" namespace="/advpostion">
+		<action name="*" class="advPositionAction" method="{1}">
+			<result name="index">/pages/htw/indexImage/advList.jsp</result>
+			<result name="input">/pages/htw/indexImage/advEdit.jsp</result>
+			<result name="success" type="redirect">index.do</result>
+			<result name="view">/pages/htw/indexImage/view.jsp</result>
+		</action>
+	</package>
+</struts>

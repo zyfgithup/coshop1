@@ -1,0 +1,21 @@
+#custom .uploadifyQueueItem {
+  background-color: #FFFFFF;
+  border: none;
+  border-bottom: 1px solid #E5E5E5;
+  font: 11px Verdana, Geneva, sans-serif;
+  margin-top: 0;
+  width: 350px;
+}
+#custom .uploadifyError {
+  background-color: #FDE5DD !important;
+  border: none !important;
+  border-bottom: 1px solid #FBCBBC !important;
+}
+#custom .uploadifyQueueItem .cancel {
+  float: right;
+}
+#custom-demo .uploadifyProgressBar {
+  background-color: #0099FF;
+  height: 3px;
+  width: 1px;
+}

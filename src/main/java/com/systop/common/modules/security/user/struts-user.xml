@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin.security" extends="json" namespace="/security">
+		<action name="*/*" class="{1}Action" method="{2}">
+			<result name="index">/pages/admin/security/{1}/index.jsp</result>
+		    <result name="input">/pages/admin/security/{1}/edit.jsp</result>
+		    <result name="bingo">/pages/admin/security/{1}/regUserEdit.jsp</result>
+		    <!--
+		    <result name="success" type="chain">{1}/index</result>
+		    -->
+		    <result name="success" type="redirect">{1}/index.do</result>
+		    <result name="user-success" type="redirect">{1}/index.do?model.type=${model.type}</result>
+		    <result name="changePassword">/pages/admin/security/user/changePassword.jsp</result>
+		    <result name="changePasswordPda">/pages/admin/security/user/changePasswordPda.jsp</result>
+		    <result name="showIndex">/pages/admin/security/user/showIndex.jsp</result>
+		    <result type="json" name="json">
+		        <param name="ignoreHierarchy">false</param>
+		        <param name="root">page</param>
+				<param name="excludeProperties">
+				    .*\.roles.*\.permissions
+				    .*\.roles.*\.depts
+				    .*\.roles.*\.childRoles
+				    .*\.roles.*\.parentRole
+				    .*\.dept		    
+				</param>
+		    </result>
+		    <result type="json" name="jsonRst">
+		   		<param name="root">checkResult</param>
+			</result>
+			<result type="json" name="allCompany">
+		   		<param name="root">rstList</param>
+			</result>
+		    <result type="json" name="tree">
+		        <param name="ignoreHierarchy">false</param>
+		        <param name="root">userTree</param>				
+		    </result>
+		</action>		
+	</package>
+	<package name="admin.user" extends="default" namespace="/user">
+		<action name="*/*" class="userAction" method="{1}">
+		    <result name="userInfo">/pages/admin/security/user/userInfo.jsp</result>
+		</action>		
+	</package>
+	<package name="admin.user.ext" extends="json" namespace="/user">
+		<action name="changePass" class="userAction" method="changePassAjax">
+		    <result type="json" name="json">
+		     <param name="root">msg</param>
+		    </result>
+		</action>
+		<action name="indexLoginUser" class="userAction" method="userInfo">
+		    <result name="userInfo">/index_login.jsp</result>
+		</action>			
+	</package>
+</struts>
+

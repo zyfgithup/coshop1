@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="amol.storage" extends="json" namespace="/base/storage">
+		<action name="*" class="storageAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/base/storage/edit.jsp</result>
+			<result name="index">/pages/amol/base/storage/index.jsp</result>
+			<result name="view">/pages/amol/base/storage/edit.jsp</result>
+			<result name="showIndex">/pages/amol/base/storage/showIndex.jsp</result>
+			<result name="jsonSuccess" type="json">
+				<param name="root">result</param>
+			</result>		
+		</action>
+	</package>
+	<package name="amol.storage.second" extends="default" namespace="/base/storage/second">
+		<action name="*" class="storageSecondAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/base/storage/second/edit.jsp</result>
+			<result name="index">/pages/amol/base/storage/second/index.jsp</result>
+			<result name="view">/pages/amol/base/storage/second/edit.jsp</result>
+		</action>
+	</package>
+</struts>

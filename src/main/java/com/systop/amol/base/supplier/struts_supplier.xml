@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="amol.base.supplier" extends="json"  namespace="/base/supplier">
+		<action name="*" class="supplierAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/base/supplier/edit.jsp</result> 
+			<result name="index">/pages/amol/base/supplier/index.jsp</result> 
+			<result name="init">/pages/amol/base/supplier/Initindex.jsp</result> 
+			<result name="view">/pages/amol/base/supplier/view.jsp</result>
+            <result name="showIndex">/pages/amol/base/supplier/showIndex.jsp</result>			
+  			<result name="message">/pages/amol/base/supplier/index.jsp</result>
+  			<result type="json" name="jsonResult">
+			    <param name="ignoreHierarchy">false</param>
+		   		<param name="root">jsonResult</param>
+			</result>	
+		</action>
+	</package>
+	
+</struts>

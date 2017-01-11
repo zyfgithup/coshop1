@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	
+	<!-- 销售出库 -->
+	<package name="amol.pda.sales" extends="default"  namespace="/pda/sales">
+		<action name="*" class="pdaSalesAction" method="{1}">
+			<result name="success">/pages/amol/pda/sales/editCard.jsp</result>
+			<result name="index">/pages/amol/pda/sales/index.jsp</result>
+			<result name="input">/pages/amol/pda/sales/editCard.jsp</result> 
+			<result name="editCard">/pages/amol/pda/sales/editCard.jsp</result>
+		</action>
+	</package>
+
+</struts>

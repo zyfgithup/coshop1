@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="amol.card" extends="json"  namespace="/card">
+		<action name="*" class="cardAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/card/edit.jsp</result> 
+			<result name="index">/pages/amol/card/index.jsp</result> 
+			<result name="view">/pages/amol/card/edit.jsp</result>				
+			<result type="json" name="jsonRst">	
+		   		<param name="root">cardsRst</param>
+			</result>	
+		</action>
+	</package>
+	
+	<package name="amol.card.up" extends="json"  namespace="/card/up">
+		<action name="*" class="cardUpAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/card/up/edit.jsp</result> 
+			<result name="index">/pages/amol/card/up/index.jsp</result> 
+			<result name="view">/pages/amol/card/up/view.jsp</result>
+			<result type="json" name="jsonResult">
+			    <param name="ignoreHierarchy">false</param>
+		   		<param name="root">jsonResult</param>
+			</result>				
+		</action>
+	</package>
+	
+	<package name="amol.card.spend" extends="default"  namespace="/card/spend">
+		<action name="*" class="cardSpendAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/card/spend/index.jsp</result>	
+			<result name="view">/pages/amol/card/spend/view.jsp</result>	
+		</action>
+	</package>
+	
+	<package name="amol.card.replace" extends="json"  namespace="/card/replace">
+		<action name="*" class="cardReplaceAction" method="{1}">
+			<result name="success" type="redirect">/card/grant/index.do</result>
+			<result name="input">/pages/amol/card/grant/fillCard.jsp</result>
+			<result type="json" name="jsonResult">
+			    <param name="ignoreHierarchy">false</param>
+		   		<param name="root">jsonResult</param>
+			</result>	
+			<result type="json" name="jsonRst">	
+		   		<param name="root">cardsRst</param>
+			</result>
+			<result type="json" name="orderCardRst">	
+		   		<param name="root">orderCardRst</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="amol.card.rest" extends="json"  namespace="/card/rest">
+		<action name="*" class="cardRestPasswordAction" method="{1}">
+			<result name="success" type="redirect">/card/grant/index.do</result>
+			<result name="input">/pages/amol/card/grant/restPassword.jsp</result>
+			<result type="json" name="jsonResult">
+			    <param name="ignoreHierarchy">false</param>
+		   		<param name="root">jsonResult</param>
+			</result>							
+		</action>
+	</package>
+	
+	<package name="amol.card.grant" extends="json"  namespace="/card/grant">
+		<action name="*" class="cardGrantAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/card/grant/edit.jsp</result> 
+			<result name="index">/pages/amol/card/grant/index.jsp</result> 
+			<result name="search">/pages/amol/card/grant/cards.jsp</result>
+			<result name="view">/pages/amol/card/grant/view.jsp</result>	
+            <result type="json" name="jsonResult">
+			    <param name="ignoreHierarchy">false</param>
+		   		<param name="root">jsonResult</param>
+			</result>
+			<result type="json" name="password">	
+		   		<param name="root">isPassword</param>
+			</result> 
+			<result type="json" name="checkCard">	
+		   		<param name="root">checks</param>
+			</result>	
+			<result type="json" name="jsonRst">	
+		   		<param name="root">cardsRst</param>
+			</result>	
+			<result type="json" name="check">	
+		   		<param name="root">checkResult</param>
+			</result>
+			<result name="viewBank">/pages/amol/card/grant/viewBank.jsp</result>
+			<result name="indexSales">/pages/amol/card/grant/indexSales.jsp</result>
+			<result name="bankSales">/pages/amol/card/grant/indexBank.jsp</result>
+		</action>
+		
+		<action name="updatePassword" class="cardGrantAction" method="updatePassword">
+			<result name="updatePassword">/pages/amol/card/grant/updatePassword.jsp</result>
+			<result name="success" type="redirect">index.do</result>			
+		</action>
+		<action name="updatePass" class="cardGrantAction" method="edit">
+      		<result name="input">/pages/amol/card/grant/updatePassword.jsp</result>
+    	</action>
+	</package>
+</struts>

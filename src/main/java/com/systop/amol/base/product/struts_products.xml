@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 商品管理Action【平台用户】 -->
+	<package name="amol.product" extends="default"  namespace="/base/product">
+		<action name="*" class="productsAction" method="{1}">
+			<result name="error" type="">index.do</result>
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/base/product/edit.jsp</result> 
+			<result name="index">/pages/amol/base/product/index.jsp</result> 			
+			<result name="view">/pages/amol/base/product/edit.jsp</result>				
+			<result name="showIndex">/pages/amol/base/product/showIndex.jsp</result>							
+			<result name="purchaseshowIndex">/pages/amol/base/product/pshowIndex.jsp</result>
+			<result name="stockInitTemplate">/pages/amol/stock/init/stockInitTemplate.jsp</result>
+		</action>
+	</package>
+	<!-- 团购商品管理Action【平台用户】 -->
+	<package name="amol.product.groupPurchase" extends="default"  namespace="/base/product/groupPurchase">
+		<action name="*" class="groupPurchaseAction" method="{1}">
+			<result name="error" type="">index.do</result>
+			<result name="gpIndex">/pages/amol/base/product/group_purchase/gpIndex.jsp</result> 
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/base/product/group_purchase/edit.jsp</result> 
+			<result name="index">/pages/amol/base/product/group_purchase/index.jsp</result> 			
+			<result name="view">/pages/amol/base/product/group_purchase/edit.jsp</result>				
+		</action>
+	</package>
+	
+	<!-- 模板商品【平台用户】 -->
+	<package name="amol.product.productTemplate" extends="default"  namespace="/base/product/productTemplate">
+		<action name="*" class="productTemplateAction" method="{1}">
+			<result name="error" type="">index.do</result>
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/base/product/product_template/edit.jsp</result> 
+			<result name="index">/pages/amol/base/product/product_template/index.jsp</result> 			
+			<result name="view">/pages/amol/base/product/product_template/edit.jsp</result>				
+			<result name="showIndex">/pages/amol/base/product/product_template/showIndex.jsp</result>							
+			<result name="purchaseshowIndex">/pages/amol/base/product/product_template/pshowIndex.jsp</result>
+			<result name="stockInitTemplate">/pages/amol/stock/init/product_template/stockInitTemplate.jsp</result>
+		</action>
+	</package>
+	<!-- 商品管理Action【分销商】 -->
+	<package name="amol.distributor" extends="default"  namespace="/base/product/distributor">
+		<action name="*" class="productsDistributorAction" method="{1}">
+			<result name="error" type="">index.do</result>
+			<result name="managerSave" type="redirect">managerIndexProductCun.do</result>
+			<result name="success" type="redirect">index.do</result>
+			<result name="tjXJSuc1" type="redirect">tjindex.do</result>
+			<result name="adminSuc" type="redirect">index.do</result>
+			<result name="XJSuc" type="redirect">myIndex.do</result>
+			<result name="tjXJSuc" type="redirect">myTjIndex.do</result>
+			<result name="XJiNPUT">/pages/amol/base/product/distributor/xjfxZyEdit.jsp</result> 
+			<result name="input">/pages/amol/base/product/distributor/edit.jsp</result> 
+			<result name="managerZyedit">/pages/amol/base/product/distributor/managerZyedit.jsp</result> 
+			<result name="myIndex">/pages/amol/base/product/distributor/myIndex.jsp</result> 
+			<result name="TJiNPUT">/pages/amol/base/product/distributor/tjxjfxZyEdit.jsp</result>
+			<result name="myTjIndex">/pages/amol/base/product/distributor/myTjIndex.jsp</result>
+			<result name="index">/pages/amol/base/product/distributor/index.jsp</result> 
+			<result name="tjindex">/pages/amol/base/product/distributor/tjindex.jsp</result>			
+			<result name="view">/pages/amol/base/product/distributor/edit.jsp</result>				
+			<result name="showIndex">/pages/amol/base/product/distributor/showIndex.jsp</result>							
+			<result name="purchaseshowIndex">/pages/amol/base/product/distributor/pshowIndex.jsp</result>
+			<result name="stockInitTemplate">/pages/amol/stock/init/distributor/stockInitTemplate.jsp</result>
+			
+			<result name="importEdit">/pages/amol/base/product/distributor/importEdit.jsp</result>
+			<!-- 通过模板商品添加分销商自己商品ui -->
+			<result name="managerTemplateProductUI">/pages/amol/base/product/distributor/managerTemplateProductUI.jsp</result>
+			<result name="templateProductUI">/pages/amol/base/product/distributor/templateProductUI.jsp</result>
+			<!-- 保存通过模板商品生成的分销商自己的商品 -->
+			<result name="saveTemplateProduct" type="redirect">index.do</result>
+			<!-- 保存通过模板商品生成的分销商自己的商品 -->
+			<result name="indexPlatformProduct">/pages/amol/base/product/distributor/indexPlatformProduct.jsp</result>
+			<result name="managerIndexProductCun">/pages/amol/base/product/distributor/managerIndexProductCun.jsp</result>
+		</action>
+	</package>
+	<!-- 手机app请求商品数据 -->
+	<package name="phone.product" extends="json" namespace="/phone/product">
+		<action name="*" class="phoneProductsAction" method="{1}">
+			<result name="index" type="json">
+				<param name="root">list</param>
+			</result>
+			<result name="jfIndex" type="json">
+				<param name="root">list</param>
+			</result>
+			<result name="goodsIndex" type="json">
+				<param name="root">list</param>
+			</result>
+			<result name="prodetail" type="json">
+				<param name="root">product</param>
+			</result>
+			<result name="result" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	
+	
+</struts>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <!-- 首页信息 -->
+	<package name="djkj.bnsc.indexMessage" extends="json" namespace="/indexMessage">
+		<action name="*" class="indexAPPAction" method="{1}">
+			<result type="json" name="index">	
+		   		<param name="root">index</param>
+			</result>
+		</action>
+	</package>
+</struts>

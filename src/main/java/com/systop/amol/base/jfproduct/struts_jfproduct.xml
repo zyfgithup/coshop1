@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="amol.jfjfproduct" extends="default"  namespace="/base/jfproduct">
+		<action name="*" class="jfProductAction" method="{1}">
+			<result name="error" type="">index.do</result>
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/base/jfproduct/edit.jsp</result>
+			<result name="index">/pages/amol/base/jfproduct/index.jsp</result> 			
+			<result name="view">/pages/amol/base/jfproduct/edit.jsp</result>				
+			<result name="showIndex">/pages/amol/base/jfproduct/showIndex.jsp</result>							
+			<result name="purchaseshowIndex">/pages/amol/base/jfproduct/pshowIndex.jsp</result>
+			<result name="importEdit">/pages/amol/base/jfproduct/jfProductImport.jsp</result>
+			<result name="stockInitTemplate">/pages/amol/stock/init/stockInitTemplate.jsp</result>
+		</action>
+	</package>
+		<package name="amol.jfpriceple" extends="default"  namespace="/base/jfpriceple">
+		<action name="*" class="jfPrincepleAction" method="{1}">
+			<result name="error" type="">index.do</result>
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/base/jfproduct/princeple/edit.jsp</result> 
+			<result name="index">/pages/amol/base/jfproduct/JfIndex.jsp</result> 			
+			<result name="view">/pages/amol/base/jfproduct/edit.jsp</result>				
+			<result name="showIndex">/pages/amol/base/jfproduct/showIndex.jsp</result>							
+			<result name="purchaseshowIndex">/pages/amol/base/jfproduct/pshowIndex.jsp</result>
+			<result name="stockInitTemplate">/pages/amol/stock/init/stockInitTemplate.jsp</result>
+		</action>
+	</package>
+	<package name="phone.jfproduct" extends="json" namespace="/phone/jfproduct">
+		<action name="*" class="phoneJfProductAction" method="{1}">
+			<result name="index" type="json">
+				<param name="root">list</param>
+			</result>
+			<result name="prodetail" type="json">
+				<param name="root">products</param>
+			</result>
+		</action>
+	</package>
+	
+</struts>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--库存提醒-->
+	<package name="amol.stock.awoke" extends="json" namespace="/stock/awoke">
+		<action name="*" class="stockAwokeAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="input">/pages/amol/stock/awoke/edit.jsp</result>
+			<result name="index">/pages/amol/stock/awoke/index.jsp</result>
+			<result name="view">/pages/amol/stock/awoke/edit.jsp</result>
+			<result name="find">/pages/amol/stock/awoke/find_store.jsp</result>
+			<result name="jsonSuccess" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<!--盘点单-->
+	<package name="amol.stock.check" extends="json" namespace="/stock/check">
+		<action name="*" class="stockCheckAction" method="{1}">
+			<result name="exportExcel">/pages/amol/stock/check/exportExcel.jsp</result>
+			<result name="index">/pages/amol/stock/check/index.jsp</result>
+			<result name="checkIndex">/pages/amol/stock/select/checkIndex.jsp</result>
+			<result name="input">/pages/amol/stock/check/edit.jsp</result>
+			<result name="success" type="redirect">index.do</result>
+			<result name="view">/pages/amol/stock/check/view.jsp</result>
+			<result name="jsonSuccess" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<!--盘点明细-->
+	<package name="amol.stock.check.detail" extends="json" namespace="/stock/check/detail">
+		<action name="*" class="stockCheckDetailAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/stock/check/edit.jsp</result>
+			<result name="input">/pages/amol/stock/check/edit.jsp</result>
+			<result name="view">/pages/amol/stock/check/view.jsp</result>
+			<result name="jsonSuccess" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="jsonStockCheckInfoSuccess" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<!--盘点单-盘盈盘亏单-->
+	<package name="amol.stock.check.lp" extends="json" namespace="/stock/check/lp">
+		<action name="*" class="stockCheckLPAction" method="{1}">
+			<result name="exportExcel">/pages/amol/stock/check/exportExcel.jsp</result>
+			<result name="view">/pages/amol/stock/check/lpView.jsp</result>
+		</action>
+	</package>
+	<!--即时库存-->
+	<package name="amol.stock" extends="json" namespace="/stock">
+		<action name="*" class="stockAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/stock/index.jsp</result>
+			<result name="salesStockIndex">/pages/amol/sales/stock/index.jsp</result>
+			<result name="stockIndex">/pages/amol/stock/state/stockselectAll.jsp</result>
+			<result name="stockIndexView">/pages/amol/stock/state/view.jsp</result>
+			<result name="stockShowIndex">/pages/amol/stock/trac/spshowIndex.jsp</result>
+			<result name="selectorProIndex">/pages/amol/stock/check/showCheckIndex.jsp</result>
+			<result type="json" name="jsonRst">	
+		   		<param name="root">isStock</param>
+			</result>
+		</action>
+	</package>
+	<!--库存调拨单-->
+	<package name="amol.stock.trac" extends="default" namespace="/stock/trac">
+		<action name="*" class="stockTracAction" method="{1}">
+			<result name="success" type="redirect">index.do</result>
+			<result name="index">/pages/amol/stock/trac/index.jsp</result>
+			<result name="tracIndex">/pages/amol/stock/select/tracIndex.jsp</result>
+			<result name="input">/pages/amol/stock/trac/edit.jsp</result>
+			<result name="view">/pages/amol/stock/trac/view.jsp</result>
+			<result name="exportExcel">/pages/amol/stock/trac/exportExcel.jsp</result>			
+		</action>
+	</package>
+	<!--库存调拨明细-->
+	<package name="amol.stock.trac.detail" extends="json" namespace="/stock/trac/detail">
+		<action name="*" class="stockTracDetailAction" method="{1}">
+			<result name="success" type="redirect">index.do?su=true</result>
+			<result name="index">/pages/amol/stock/trac/index.jsp</result>
+			<result name="input">/pages/amol/stock/trac/edit.jsp</result>
+			<result name="view">/pages/amol/stock/trac/view.jsp</result>
+			<result name="jsonSuccess" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<!--期初库存-->
+	<package name="amol.stock.init" extends="json" namespace="/stock/init">
+		<action name="*" class="stockInitAction" method="{1}">
+			<result name="success" type="redirect">init.do?model.storage.id=${model.storage.id}</result>
+			<result name="index">/pages/amol/stock/init/index.jsp</result>
+			<result name="input">/pages/amol/stock/init/edit.jsp</result>
+			<result name="view">/pages/amol/stock/init/view.jsp</result>
+			<result name="exportExcel">/pages/amol/stock/init/exportExcel.jsp</result>		
+			<result name="jsonSuccess" type="json">
+				<param name="root">result</param>
+			</result>	
+		</action>
+		<action name="importData" class="stockInitImportAction" method="importData">
+			<result name="success" type="redirect">init.do?model.storage.id=${model.storage.id}</result>
+			<result name="input">/pages/amol/stock/init/edit.jsp</result>
+		</action>
+	</package>
+</struts>

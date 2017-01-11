@@ -1,0 +1,112 @@
+html,body {
+	font: normal 12px, sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+	overflow: hidden;
+	height: 100%;
+}
+
+.x-panel {
+	border-style: solid;
+	border-color: #99bbe8;
+	border-width: 1px;
+}
+
+.x-panel-noborder,.x-panel-header-noborder,.x-panel-collapsed{
+	border:none;
+}
+
+.x-unselectable{
+	border-bottom:1px #99bbe8 solid;
+}
+
+p {
+	margin: 5px;
+}
+
+span {
+	font: 12px, sans-serif;
+}
+
+#ext-gen15 {
+	font: bold 12px, sans-serif;
+}
+
+.icon {
+	margin-left: 10px;
+	margin-right: 5px;
+	border: none;
+}
+
+a[href='#']{
+	color:red;
+}
+
+.desktop {
+	background-image: url(../images/icons/more2.gif);
+}
+
+.message {
+	background-image: url(../images/exticons/comment.gif);
+}
+
+.news{
+		background-image: url(../images/icons/news.gif);
+}
+
+.diary{
+	background-image: url(../images/icons/diary.gif);
+}
+
+.cms{
+	background-image: url(../images/icons/software.gif);
+}
+
+.permit {
+	background-image: url(../images/icons/lock_go.gif);
+}
+
+.system{
+	background-image: url(../images/amol/system.png);
+}
+
+.customer{
+	background-image: url(../images/icons/users.gif);
+}
+
+.base{
+	background-image: url(../images/amol/base.png);
+}
+
+.card{
+	background-image: url(../images/amol/card.png);
+}
+
+.cggl{
+	background-image: url(../images/amol/cggl.png);
+}
+
+.xsgl{
+	background-image: url(../images/amol/xsgl.png);
+}
+
+.kcgl{
+	background-image: url(../images/amol/kcgl.png);
+}
+
+.finance{
+	background-image: url(../images/amol/cwgl.png);
+}
+
+.supplier{
+	background-image: url(../images/amol/supplier.png);
+}
+
+.count{
+	background-image: url(../images/amol/finance/jsyf.png);
+}
+
+.init{
+	background-image: url(../images/exticons/list-items.gif);
+}
