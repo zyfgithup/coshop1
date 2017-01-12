@@ -137,7 +137,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 6.0.45" level="application_server_libraries" />
     <orderEntry type="module-library">
       <library>
@@ -152,5 +152,6 @@
         <jarDirectory url="file://$MODULE_DIR$/WebContent/WEB-INF/lib" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="java7" level="project" />
   </component>
 </module>

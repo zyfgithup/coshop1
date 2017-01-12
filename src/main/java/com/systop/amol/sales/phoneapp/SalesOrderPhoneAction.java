@@ -953,7 +953,7 @@ public class SalesOrderPhoneAction
 	//返现明细 包含充值返现  和    分拥
 	public String getMyFanxianRecord(){
 		String userId = getRequest().getParameter("userId");
-		String sql = " select id,jyje as spayamount,date_format(create_time,'%Y.%m.%d') as createTime from zhuan_zhang_record where user_id="+Integer.parseInt(userId)+" and (type = '0' or type='1') order by create_time desc   ";
+		String sql = " select id,zzJe as spayamount,date_format(create_time,'%Y.%m.%d') as createTime from zhuan_zhang_record where user_id="+Integer.parseInt(userId)+" and (type = '0' or type='1') order by create_time desc   ";
 		userList = jdbcTemplate.queryForList(sql);
 		return "userList";
 	}

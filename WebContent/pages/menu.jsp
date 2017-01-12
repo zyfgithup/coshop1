@@ -95,14 +95,14 @@
 					<img src="${ctx}/images/amol/base/splx.gif" class="icon">
 					<a href="${ctx}/base/prosort/banksTableIndex.do" target="main">会员类型</a>
 				</div>
-					<div style="padding-top:2px;display: none" id="splb">
+					<%--<div style="padding-top:2px;display: none" id="splb">
                         <img src="${ctx}/images/amol/base/splx.gif" class="icon">
                         <a href="${ctx}/pages/amol/base/prosort/index.jsp" target="main">商品类别</a>
                     </div>
                     <div style="padding-top:2px;display: none" id="jldw">
                         <img src="${ctx}/images/amol/base/zldw.gif" class="icon">
                         <a href="${ctx}/base/units/index.do" target="main">计量单位</a>
-                    </div>
+                    </div>--%>
 				<div style="padding-top:2px;display: none" id="jlsz">
 					<img src="${ctx}/images/amol/base/spzl.gif" class="icon">
 					<a href="${ctx}/distanceset/index.do" target="main">距离设置</a>

@@ -185,6 +185,10 @@ public class SalesManager extends BaseGenericsManager<Sales> {
 		}*/
 	}
 
+	public static void main(String[] args){
+		double fxMoney = 0.02 * Double.valueOf(50) / 100;
+		System.out.println(fxMoney);
+	}
 	/**
 	 * 删除出库单
 	 * 
